@@ -13,7 +13,7 @@ final class Task_1 {//Найдите  значение функции: z = ( (a 
     }
 }
 
-class Solution {
+class Test_1 {
     public static void main(String[] args) {
         double res = Task_1.getResult(13, 100, 10);
         System.out.println("z = " + res);
