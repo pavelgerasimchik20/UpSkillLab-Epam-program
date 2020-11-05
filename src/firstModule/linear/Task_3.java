@@ -1,4 +1,4 @@
-package firstModule;
+package firstModule.linear;
 
 import static java.lang.Math.*;
 

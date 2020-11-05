@@ -1,4 +1,4 @@
-package firstModule;
+package firstModule.linear;
 
 public class Task_6 {
 

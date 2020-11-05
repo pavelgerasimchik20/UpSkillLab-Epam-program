@@ -1,7 +1,6 @@
-package firstModule;
+package firstModule.linear;
 
 import javax.swing.*;
-import java.util.Locale;
 
 public class Task_5 {
     public static void main(String[] args) {
