@@ -12,16 +12,30 @@ public class Task_4 {  //  Заданы размеры А, В прямоугол
         System.out.print("Задайте размеры кирпича в мм: \n x = ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String tmp = reader.readLine();
-        brick.setX(Integer.parseInt(tmp));
-        System.out.print(" y = ");
-        tmp = reader.readLine();
-        brick.setY(Integer.parseInt(tmp));
-        System.out.print(" z = ");
-        tmp = reader.readLine();
-        brick.setZ(Integer.parseInt(tmp));
+        try {
+            brick.setX(Integer.parseInt(tmp));
+            System.out.print(" y = ");
+            tmp = reader.readLine();
+        } catch (NumberFormatException nfe) {
+            System.exit(-1);
+        }
+        try {
+            brick.setY(Integer.parseInt(tmp));
+            System.out.print(" z = ");
+            tmp = reader.readLine();
+        } catch (NumberFormatException nfe) {
+            System.exit(-2);
+        }
+        try {
+            brick.setZ(Integer.parseInt(tmp));
+        } catch(NumberFormatException nfe){
+            System.exit(-3);
+        }
+
         brick.checkFit();
     }
 }
+
 
 class AnotherBrickInTheWall {
     private int x;
