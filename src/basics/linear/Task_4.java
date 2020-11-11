@@ -1,4 +1,4 @@
-package firstModule.linear;
+package basics.linear;
 
 import java.util.Scanner;
 

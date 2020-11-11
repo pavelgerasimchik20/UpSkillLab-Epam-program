@@ -1,4 +1,4 @@
-package firstModule.linear;
+package basics.linear;
 
 import javax.swing.*;
 

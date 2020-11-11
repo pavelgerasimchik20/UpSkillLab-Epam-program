@@ -1,4 +1,4 @@
-package firstModule.cycles;
+package basics.cycles;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package firstModule.cycles;
+package basics.cycles;
 
 public class Task_3 { // Найти сумму квадратов первых ста чисел.
     public static void main(String[] args) {

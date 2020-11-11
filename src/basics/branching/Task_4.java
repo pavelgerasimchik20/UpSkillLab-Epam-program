@@ -1,4 +1,4 @@
-package firstModule.branching;
+package basics.branching;
 
 import java.io.BufferedReader;
 import java.io.IOException;

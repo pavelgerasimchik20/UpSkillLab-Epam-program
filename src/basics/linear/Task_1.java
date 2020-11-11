@@ -1,4 +1,4 @@
-package firstModule.linear;
+package basics.linear;
 
 final class Task_1 {//Найдите  значение функции: z = ( (a – 3 ) * b / 2) + c.
 

@@ -1,6 +1,4 @@
-package firstModule.branching;
-
-import java.util.Random;
+package basics.branching;
 
 import static java.lang.Math.min;
 import static java.lang.Math.max;

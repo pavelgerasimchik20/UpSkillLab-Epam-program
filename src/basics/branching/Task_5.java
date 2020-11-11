@@ -1,4 +1,4 @@
-package firstModule.branching;
+package basics.branching;
 
 import java.util.Scanner;
 

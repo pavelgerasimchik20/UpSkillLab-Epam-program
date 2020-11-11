@@ -1,7 +1,6 @@
-package firstModule.cycles;
+package basics.cycles;
 
 import java.math.BigInteger;
-import java.util.Scanner;
 
 public class Task_4 { // Составить программу нахождения произведения квадратов первых двухсот чисел
 
