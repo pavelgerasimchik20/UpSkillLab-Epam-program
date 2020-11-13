@@ -15,8 +15,8 @@ public class Task4 { // Даны действительные числа а1 ,а
 
     private static int[] swapMinMaxElement(int[] array) {
 
-        int min = 1000;
-        int max = 0;
+        int min = array[0];
+        int max = array[0];
         int minPosition = 0;
         int maxPosition = 0;
         for (int i = 0; i < array.length; i++) {
