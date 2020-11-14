@@ -6,7 +6,7 @@ public class Task4 { // Сформировать квадратную матри
     public static void main(String[] args) {
 
         int count = 0;
-        int matrixSize = (int) (Math.random() * 12+1);
+        int matrixSize = (int) (Math.random() * 12+1);  // универсально, работает с любым n ( и четное и нечетное )
         int[][] squareMatrix = new int[matrixSize][matrixSize];
         for (int i = 0; i < squareMatrix.length; i++) {
             count=0;
