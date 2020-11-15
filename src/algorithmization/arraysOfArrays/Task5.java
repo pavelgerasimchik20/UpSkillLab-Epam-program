@@ -22,7 +22,7 @@ public class Task5 { //  Сформировать квадратную матр�
             for (int j = 0; j < squareMatrix[i].length; j++) {
                 System.out.print(squareMatrix[i][j] + "\t");
             }
-            System.out.println();             // нервыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыы
+            System.out.println();
         }
     }
 }
