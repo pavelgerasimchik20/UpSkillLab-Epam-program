@@ -6,7 +6,7 @@ public class Task12 { // Отсортировать строки матрицы 
         int[][] matrix = new int[10][10];
         int min = 50;
         int max = 100;
-        int b;
+        int temp;
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -21,9 +21,9 @@ public class Task12 { // Отсортировать строки матрицы 
             for (int j = 0; j < matrix[i].length; j++) {
                 for (int k = j + 1; k < matrix[j].length; k++) {
                     if (matrix[i][j] > matrix[i][k]) {
-                        b = matrix[i][j];
+                        temp = matrix[i][j];
                         matrix[i][j] = matrix[i][k];
-                        matrix[i][k] = b;
+                        matrix[i][k] = temp;
                     }
                 }
             }
@@ -41,9 +41,9 @@ public class Task12 { // Отсортировать строки матрицы 
             for (int j = 0; j < matrix[i].length; j++) {
                 for (int k = j + 1; k < matrix[j].length; k++) {
                     if (matrix[i][j] < matrix[i][k]) {
-                        b = matrix[i][j];
+                        temp = matrix[i][j];
                         matrix[i][j] = matrix[i][k];
-                        matrix[i][k] = b;
+                        matrix[i][k] = temp;
                     }
                 }
             }
