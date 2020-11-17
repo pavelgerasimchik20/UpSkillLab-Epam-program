@@ -15,7 +15,7 @@ public class Task12 { // Отсортировать строки матрицы 
             }
             System.out.println();
         }
-        System.out.println("||||||||||||||||||Сортируем по возрастанию||||||||||||||||||||");
+        System.out.println("||||||||||||||||||Сортируем строки по возрастанию||||||||||||||||||||");
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -35,7 +35,7 @@ public class Task12 { // Отсортировать строки матрицы 
             }
             System.out.println();
         }
-        System.out.println("|||||||||||||||||||||Сортируем по убыванию||||||||||||||||||");
+        System.out.println("|||||||||||||||||||||Сортируем строки по убыванию||||||||||||||||||");
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
