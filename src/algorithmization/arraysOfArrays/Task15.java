@@ -30,8 +30,8 @@ public class Task15 { //Найдите наибольший элемент ма�
     static int searchMaxVal(int[][] myMatrix) {
         replaceElement = myMatrix[0][0];
         for (int i = 0; i < myMatrix.length; i++) {
-            for (int j = 1; j < myMatrix.length; j++) {
-                if (myMatrix[i][j - 1] < myMatrix[i][j]) {
+            for (int j = 0; j < myMatrix[i].length; j++) {
+                if (myMatrix[i][j] > replaceElement) {
                     replaceElement = myMatrix[i][j];
                 }
             }
