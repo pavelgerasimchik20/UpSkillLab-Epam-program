@@ -84,6 +84,27 @@ class Sorting {
 
     protected static void shellSort(int[] array) {
 
+        int increment = array.length / 2;
+        while (increment >= 1) {
+            for (int startIndex = 0; startIndex < increment; startIndex++) {
+                insertSort(array, startIndex, increment);
+            }
+            increment = increment / 2;
+        }
+    }
 
+    private static void insertSort(int[] array, int startIndex, int increment) {
+        for (int i = startIndex; i < array.length - 1; i = i + increment) {
+            for (int j = Math.min(i + increment, array.length - 1); j - increment >= 0; j = j - increment) {
+                if (array[j - increment] > array[j]) {
+                    int tmp = array[j];
+                    array[j] = array[j - increment];
+                    array[j - increment] = tmp;
+                } else {
+                    break;
+                }
+            }
+        }
     }
 }
+
