@@ -24,7 +24,7 @@ public class Task_7 { // Даны два числа. Определить циф
             if (secondNum < 0) {
                 secondNum = Math.abs(secondNum);
             }
-            System.out.println("Common digits: " + compareArrays(createArray(firstNum), createArray(secondNum))); // омайгад... надеюсь это тебе понравится ))
+            System.out.println("Common digits: " + compareArrays(createArray(firstNum), createArray(secondNum)));
         } catch (InputMismatchException inputMismatchException) {
             System.out.println("Enter integer number !");
         }
