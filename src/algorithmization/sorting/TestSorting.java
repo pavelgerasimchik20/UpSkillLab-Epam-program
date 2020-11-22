@@ -53,16 +53,16 @@ class Sorting {
 
     protected static void insertionSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            int value = array[i];
+            int temp = array[i];
             int j = i - 1;
             for (; j >= 0; j--) {
-                if (value < array[j]) {
+                if (temp < array[j]) {
                     array[j + 1] = array[j];
                 } else {
                     break;
                 }
             }
-            array[j + 1] = value;
+            array[j + 1] = temp;
         }
     }
 
@@ -84,12 +84,12 @@ class Sorting {
 
     protected static void shellSort(int[] array) {
 
-        int increment = array.length / 2;
-        while (increment >= 1) {
-            for (int startIndex = 0; startIndex < increment; startIndex++) {
-                insertSort(array, startIndex, increment);
+        int range = array.length / 2;
+        while (range >= 1) {
+            for (int startIndex = 0; startIndex < range; startIndex++) {
+                insertSort(array, startIndex, range);
             }
-            increment = increment / 2;
+            range = range / 2;
         }
     }
 
