@@ -4,7 +4,7 @@ public class Task6 extends Task2 { // Написать метод(методы),
     public static void main(String[] args) {
 
         int a = 25;
-        int b = 16;
+        int b = 5;
         int c = 15;
 
         if(findNOD(a,b)==1 || findNOD(b,c)==1 || findNOD(a,c)==1){
