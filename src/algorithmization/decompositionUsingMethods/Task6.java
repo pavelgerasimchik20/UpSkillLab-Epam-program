@@ -4,13 +4,13 @@ public class Task6 extends Task2 { // Написать метод(методы),
     public static void main(String[] args) {
 
         int a = 25;
-        int b = 26;
-        int c = 27;
+        int b = 16;
+        int c = 15;
 
-        if(findNOD(a,b)==1 && findNOD(b,c)==1 && findNOD(a,c)==1){
-            System.out.println("these numbers are взаимно простые )) ");
+        if(findNOD(a,b)==1 || findNOD(b,c)==1 || findNOD(a,c)==1){
+            System.out.println("числа взаимно простые )) ");
         }else {
-            System.out.println("these numbers aren`t взаимно простые ((");
+            System.out.println("числа не взаимно простые ((");
         }
     }
 }
