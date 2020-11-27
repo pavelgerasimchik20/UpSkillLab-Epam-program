@@ -10,7 +10,7 @@ public class Task12 {
     private static int digit;
     private static int count;
     private static int i;
-    private static int K = 16;
+    private static int K = 34;
     private static int N = 5000;
 
     public static void main(String[] args) {
