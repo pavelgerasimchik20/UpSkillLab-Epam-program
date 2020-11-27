@@ -8,7 +8,7 @@ public class Task14 {  // Натуральное число, в записи к�
     // если сумма его цифр, возведенная в степень n, равна самому числу.
     // Найти все числа Армстронга от 1 до k. Для решения задачи использовать декомпозицию
     private static Scanner scanner = new Scanner(System.in);
-    public static int exponent;
+    private static int exponent;
     private static long sum=0;
 
     public static void main(String[] args) {
@@ -48,7 +48,7 @@ public class Task14 {  // Натуральное число, в записи к�
         }
     }
 
-    public static void findExponent(int i) {
+    private static void findExponent(int i) {
         while (i > 0) {
             i /= 10;
             exponent++;
