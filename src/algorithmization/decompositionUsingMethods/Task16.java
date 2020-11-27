@@ -10,7 +10,7 @@ public class Task16 { //Написать программу, определяю�
 
     public static void main(String[] args) {
 
-        n = 3;
+        n = 2;
         findSum(n);
 
     }
