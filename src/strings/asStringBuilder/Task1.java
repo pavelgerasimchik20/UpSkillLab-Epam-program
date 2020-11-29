@@ -14,6 +14,7 @@ public class Task1 { // Дан текст (строка). Найдите наи�
             if (c == ' ') {
                 count++;
                 if (count > maxValue) {
+                    
                     maxValue = count;
                 }
             } else count = 0;
