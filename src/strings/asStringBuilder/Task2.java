@@ -12,7 +12,7 @@ public class Task2 { // В строке вставить после каждог
         System.out.println(text);
     }
 
-    private static String text =
+    public static String text =
             "New divide" +
                     "I remembered black skies, the lightning all around me" +
                     "I remembered each flash as time began to blur" +
