@@ -13,7 +13,7 @@ public class Task1 {  // Дан массив названий переменны
 
     private static void toSnakeCase(String[] array) {
         for (int i = 0; i < array.length; i++) {
-            array[i] = array[i].replaceAll("([a-z])([A-Z])","$0_$2").toLowerCase();
+            array[i] = array[i].replaceAll("([a-z])([A-Z])","$1_$2").toLowerCase();
             System.out.println(array[i]);
         }
     }
