@@ -8,7 +8,6 @@ public class Task4 { //  В строке найти количество чис�
         String str;
         int count = 0;
         str = JOptionPane.showInputDialog("Введите текст :");
-        str = str.replaceAll("[-!.,?:;+=<>'\"]", "");
         str = str.replaceAll("\\D+", " ");
         String trimStr = str.trim();
         String[] txt = trimStr.split(" +");

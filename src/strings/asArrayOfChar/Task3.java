@@ -6,7 +6,6 @@ public class Task3 { // В строке найти количество цифр
 
     public static void main(String[] args) {
 
-        while (true){
             Scanner scanner = new Scanner(System.in);
             System.out.println("Введите строку для подсчета в ней цифр: ");
             String str = scanner.nextLine();
@@ -18,6 +17,5 @@ public class Task3 { // В строке найти количество цифр
                     count++;
             }
             System.out.println("В данной строке " + count + " цифр");
-        }
     }
 }

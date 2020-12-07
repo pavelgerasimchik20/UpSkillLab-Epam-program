@@ -14,7 +14,7 @@ public class Task2 { // Замените в строке все вхождени
         Pattern pattern = Pattern.compile("word");
         Matcher matcher = pattern.matcher(str);
         while(matcher.find()){
-            str = str.replaceAll("word","letter");
+            str = str.replace("word","letter");
         }
         System.out.println(str);
     }

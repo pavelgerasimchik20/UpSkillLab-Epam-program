@@ -17,6 +17,7 @@ public class Task10 { // Строка X состоит из нескольких
         str = JOptionPane.showInputDialog("Введите текст :");
         Matcher matcherLower = pattern.matcher(str);
         while (matcherLower.find()) {
+            System.out.println(matcherLower.group());
             count++;
         }
 
