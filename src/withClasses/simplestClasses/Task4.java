@@ -117,11 +117,11 @@ class MyFrame extends JFrame implements ActionListener {
 class Host {
     public static Train[] createListOfTrains() {
         Train[] trains = new Train[5];
-        trains[0] = new Train(new Time(10, 30), "Minsk", 664);
-        trains[1] = new Train(new Time(00, 00), "Moscow", 1311);
-        trains[2] = new Train(new Time(10, 00), "Minsk", 44412);
-        trains[3] = new Train(new Time(12, 30), "Gomel", 14);
-        trains[4] = new Train(new Time(19, 55), "Kaliningrad", 9983);
+        trains[0] = new Train(new Times(10, 30), "Minsk", 664);
+        trains[1] = new Train(new Times(00, 00), "Moscow", 1311);
+        trains[2] = new Train(new Times(10, 00), "Minsk", 44412);
+        trains[3] = new Train(new Times(12, 30), "Gomel", 14);
+        trains[4] = new Train(new Times(19, 55), "Kaliningrad", 9983);
         return trains;
     }
 
@@ -143,12 +143,12 @@ class Host {
 }
 
 class Train {
-    private Time time;
+    private Times time;
 
     private String destination;
     private int number;
 
-    public Train(Time time, String destination, int number) {
+    public Train(Times time, String destination, int number) {
         this.time = time;
         this.destination = destination;
         this.number = number;
@@ -167,7 +167,7 @@ class Train {
         return destination;
     }
 
-    public Time getTime() {
+    public Times getTime() {
         return time;
     }
 }
