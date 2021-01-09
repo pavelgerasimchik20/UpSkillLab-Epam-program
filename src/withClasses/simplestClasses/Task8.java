@@ -15,9 +15,31 @@ public class Task8 {
         list1.add(new Customer(7, "Leo", "Messi", "", "Chicago 3341 Dovetail Drive", 290, 9332243));
         list1.add(new Customer(8, "Pier", "Guleet", "", "Chicago 2001 Hickman Street", 001, 9332243));
         System.out.println(list1);
-        Collections.sort(list1,Comparator.comparing(Customer::toString));
+        Collections.sort(
+                list1,
+                Comparator.comparing(Customer::getFirstName)
+                        .thenComparing(Customer::getSecondName)
+                        .thenComparing(Customer::getCreditCardNumber)
+        );
         System.out.println(list1);
+        findCardNumber(list1);
+    }
 
+    private static void findCardNumber(List<Customer> list) {
+        try {
+            System.out.println("Задайте диапазон для поиска номеров карточек: \n от...");
+            Scanner scanner = new Scanner(System.in);
+            int startPosition = scanner.nextInt();
+            System.out.println("  до ...");
+            int endPosition = scanner.nextInt();
+            for (Customer it : list) {
+                if (it.getCreditCardNumber() > startPosition && it.getCreditCardNumber() < endPosition) {
+                    System.out.println(it);
+                }
+            }
+        } catch (InputMismatchException inputMismatchException) {
+            System.exit(-1);
+        }
 
     }
 }
