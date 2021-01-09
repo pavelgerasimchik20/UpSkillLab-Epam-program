@@ -2,7 +2,6 @@ package withClasses.simplestClasses;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Task5 {
@@ -55,36 +54,27 @@ class Counter {
             buttonPlus.setBackground(Color.gray);
             buttonPlus.setBounds(50, 120, 280, 30);
             add(buttonPlus);
-            ActionListener actionListenerBTNPlus = new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent) {
-                    stepByTop();
-                    label.setText(String.valueOf(getClicksAmount()));
-                }
+            ActionListener actionListenerBTNPlus = actionEvent -> {
+                stepByTop();
+                label.setText(String.valueOf(getClicksAmount()));
             };
             buttonPlus.addActionListener(actionListenerBTNPlus);
             JButton buttonMin = new JButton("-");
             buttonMin.setBackground(Color.gray);
             buttonMin.setBounds(50, 160, 280, 30);
             add(buttonMin);
-            ActionListener actionListenerBTNMin = new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent) {
-                    stepByDown();
-                    label.setText(String.valueOf(getClicksAmount()));
-                }
+            ActionListener actionListenerBTNMin = actionEvent -> {
+                stepByDown();
+                label.setText(String.valueOf(getClicksAmount()));
             };
             buttonMin.addActionListener(actionListenerBTNMin);
             JButton buttonDefault = new JButton("Обнулить");
             buttonDefault.setBackground(Color.gray);
             buttonDefault.setBounds(200, 50, 120, 30);
             add(buttonDefault);
-            ActionListener actionForBTNDefault = new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent) {
-                    setClicksAmount(0);
-                    label.setText(String.valueOf(getClicksAmount()));
-                }
+            ActionListener actionForBTNDefault = actionEvent -> {
+                setClicksAmount(0);
+                label.setText(String.valueOf(getClicksAmount()));
             };
             buttonDefault.addActionListener(actionForBTNDefault);
         }

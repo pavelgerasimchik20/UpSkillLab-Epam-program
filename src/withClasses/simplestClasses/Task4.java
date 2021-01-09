@@ -9,32 +9,37 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Task4 {
-    private static String numberOfTrain;
 
     public static void main(String[] args) {
 
-        System.out.println("Введите номер действия:\n1. Отсортировать поезда по номерам\n2. Информация по номеру поезда\n3. Отсортировать по пункту назначения\n-->");
-        Scanner scanner = new Scanner(System.in);
-        try {
-            int key = scanner.nextInt();
-            switch (key) {
-                case (1):
-                    new MyFrame();
-                    break;
-                case (2):
-                    System.out.println("Введите номер поезда:");
-                    scanner = new Scanner(System.in);
-                    findTrain(Integer.parseInt(scanner.nextLine()));
-                    break;
-                case (3):
-                    sortForSameDestination(sortByDestination(Host.createListOfTrains()));
-                    break;
-                default:
-                    System.out.println("Выберите корректный вариант");
-                    break;
+        while (true) {
+            System.out.println("Введите номер действия:\n1. Отсортировать поезда по номерам\n2. Информация по номеру поезда\n3. Отсортировать по пункту назначения\n4. Выход\n-->");
+            Scanner scanner = new Scanner(System.in);
+            try {
+                int key = scanner.nextInt();
+                switch (key) {
+                    case (1):
+                        new MyFrame();
+                        break;
+                    case (2):
+                        System.out.println("Введите номер поезда:");
+                        scanner = new Scanner(System.in);
+                        findTrain(Integer.parseInt(scanner.nextLine()));
+                        break;
+                    case (3):
+                        sortForSameDestination(sortByDestination(Host.createListOfTrains()));
+                        break;
+                    case (4):
+                        return;
+                    default:
+                        System.out.println("Выберите корректный вариант");
+                        break;
+                }
+            } catch (InputMismatchException inputMismatchException) {
+                System.out.println("Выберите корректный вариант");
+            } catch (Throwable throwable) {
+                System.out.println("something went wrong");
             }
-        } catch (InputMismatchException inputMismatchException) {
-            System.out.println("Выберите корректный вариант");
         }
     }
 
