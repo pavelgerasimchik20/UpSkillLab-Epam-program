@@ -1,35 +1,17 @@
-package withClasses.aggregation;
+package withClasses.aggregation.Task5.Frames;
+
+import withClasses.aggregation.Task5.Vouchers.DataForCompare;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class Task5 {
-    public static void main(String[] args) {
-        new Frame();
-    }
-}
+public class FrameOfType extends JFrame {
 
-class TravelVoucher {
-    private String type;
-    private String transport;
-    private String food;
-    private int amountOfDays;
-
-}
-
-class Frame extends JFrame implements ActionListener{
-
-    Frame() {
+    public FrameOfType() {
         super("                Select type of tour");
         createFrame();
         createButtons();
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent actionEvent) {
 
     }
 
@@ -39,41 +21,62 @@ class Frame extends JFrame implements ActionListener{
         relaxationBtn.setBounds(50, 20, 280, 30);
         relaxationBtn.setFocusPainted(false);
         add(relaxationBtn);
-        relaxationBtn.addActionListener(this);
+        relaxationBtn.addActionListener(actionEvent -> {
+            saveType(actionEvent);
+            dispose();
+        });
 
         JButton excursionBtn = new JButton("Excursion");
         excursionBtn.setBackground(Color.orange);
         excursionBtn.setBounds(50, 65, 280, 30);
         excursionBtn.setFocusPainted(false);
         add(excursionBtn);
-        excursionBtn.addActionListener(this);
+        excursionBtn.addActionListener(actionEvent -> {
+            saveType(actionEvent);
+            dispose();
+        });
 
         JButton healthBtn = new JButton("Health");
         healthBtn.setBackground(Color.orange);
         healthBtn.setFocusPainted(false);
         healthBtn.setBounds(50, 110, 280, 30);
         add(healthBtn);
-        healthBtn.addActionListener(this);
+        healthBtn.addActionListener(actionEvent -> {
+            saveType(actionEvent);
+            dispose();
+        });
 
         JButton shopBtn = new JButton("Shopping");
         shopBtn.setBackground(Color.orange);
         shopBtn.setFocusPainted(false);
         shopBtn.setBounds(50, 155, 280, 30);
         add(shopBtn);
-        shopBtn.addActionListener(this);
+        shopBtn.addActionListener(actionEvent -> {
+            saveType(actionEvent);
+            dispose();
+        });
 
         JButton cruiseBtn = new JButton("Cruise");
         cruiseBtn.setBackground(Color.orange);
         cruiseBtn.setBounds(50, 200, 280, 30);
         cruiseBtn.setFocusPainted(false);
         add(cruiseBtn);
-        cruiseBtn.addActionListener(this);
+        cruiseBtn.addActionListener(actionEvent -> {
+            saveType(actionEvent);
+            dispose();
+        });
+    }
+
+    private void saveType(ActionEvent e) {
+        DataForCompare dType = new DataForCompare();
+        dType.setTypeC(e.getActionCommand());
+        System.out.println(dType.typeC);
     }
 
     private void createFrame() {
-        super.getContentPane().setBackground(Color.black);
+        super.getContentPane().setBackground(Color.darkGray);
         setVisible(true);
-        setBounds(650, 170, 400, 300);
+        setBounds(250, 170, 400, 300);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
