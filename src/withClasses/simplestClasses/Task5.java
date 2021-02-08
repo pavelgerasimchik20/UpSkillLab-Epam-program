@@ -12,27 +12,24 @@ public class Task5 {
 }
 
 class Counter {
+    private static int minValue;
     private static int clicksAmount;
-    private final int clicksAmountDefault = 0;
-
-    public Counter() {
-        this.clicksAmount = clicksAmountDefault;
-    }
-
-    public Counter(int clicksAmount) {
-        this.clicksAmount = clicksAmount;
-    }
+    private static int maxValue;
 
     public static void stepByTop() {
-        clicksAmount++;
+        if (clicksAmount < maxValue) {
+            clicksAmount++;
+        }
+    }
+
+    public static void stepByDown() {
+        if (clicksAmount > minValue) {
+            clicksAmount--;
+        }
     }
 
     public static void setClicksAmount(int clicksAmount) {
         Counter.clicksAmount = clicksAmount;
-    }
-
-    public static void stepByDown() {
-        clicksAmount--;
     }
 
     public static int getClicksAmount() {
@@ -42,6 +39,9 @@ class Counter {
     static class MyFrame2 extends JFrame {
         MyFrame2() {
             super("Счётчик");
+            minValue = Integer.parseInt(JOptionPane.showInputDialog("Введите минимальное значение диапазона для счетчика"));
+            maxValue = Integer.parseInt(JOptionPane.showInputDialog("Введите максимальное значение диапазона для счетчика"));
+            clicksAmount = minValue;
             setVisible(true);
             setBounds(350, 350, 400, 300);
             setResizable(false);
@@ -50,6 +50,7 @@ class Counter {
             JLabel label = new JLabel();
             label.setBounds(50, 50, 360, 50);
             add(label);
+            label.setText(String.valueOf(minValue));
             JButton buttonPlus = new JButton("+");
             buttonPlus.setBackground(Color.gray);
             buttonPlus.setBounds(50, 120, 280, 30);
@@ -73,13 +74,11 @@ class Counter {
             buttonDefault.setBounds(200, 50, 120, 30);
             add(buttonDefault);
             ActionListener actionForBTNDefault = actionEvent -> {
-                setClicksAmount(0);
+                setClicksAmount(minValue);
                 label.setText(String.valueOf(getClicksAmount()));
             };
             buttonDefault.addActionListener(actionForBTNDefault);
         }
-
-
     }
 }
 
