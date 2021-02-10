@@ -12,6 +12,7 @@ public class Main {
         new FrameOfTransport();
         new FrameOfFood();
         new FrameOfDays();
+
     }
 }
 

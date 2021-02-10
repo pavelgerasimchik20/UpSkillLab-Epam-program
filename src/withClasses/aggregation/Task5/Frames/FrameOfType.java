@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 
 public class FrameOfType extends JFrame {
 
+    DataForCompare dfc;
+
     public FrameOfType() {
         super("                Select type of tour");
         createFrame();
@@ -15,14 +17,14 @@ public class FrameOfType extends JFrame {
 
     }
 
-    private void createButtons() {
+    public void createButtons() {
         JButton relaxationBtn = new JButton("Relax");
         relaxationBtn.setBackground(Color.orange);
         relaxationBtn.setBounds(50, 20, 280, 30);
         relaxationBtn.setFocusPainted(false);
         add(relaxationBtn);
         relaxationBtn.addActionListener(actionEvent -> {
-            saveType(actionEvent);
+            dfc = saveType(actionEvent);
             dispose();
         });
 
@@ -32,7 +34,7 @@ public class FrameOfType extends JFrame {
         excursionBtn.setFocusPainted(false);
         add(excursionBtn);
         excursionBtn.addActionListener(actionEvent -> {
-            saveType(actionEvent);
+            dfc = saveType(actionEvent);
             dispose();
         });
 
@@ -42,7 +44,7 @@ public class FrameOfType extends JFrame {
         healthBtn.setBounds(50, 110, 280, 30);
         add(healthBtn);
         healthBtn.addActionListener(actionEvent -> {
-            saveType(actionEvent);
+            dfc = saveType(actionEvent);
             dispose();
         });
 
@@ -52,7 +54,7 @@ public class FrameOfType extends JFrame {
         shopBtn.setBounds(50, 155, 280, 30);
         add(shopBtn);
         shopBtn.addActionListener(actionEvent -> {
-            saveType(actionEvent);
+            dfc = saveType(actionEvent);
             dispose();
         });
 
@@ -62,15 +64,16 @@ public class FrameOfType extends JFrame {
         cruiseBtn.setFocusPainted(false);
         add(cruiseBtn);
         cruiseBtn.addActionListener(actionEvent -> {
-            saveType(actionEvent);
+            dfc = saveType(actionEvent);
             dispose();
         });
     }
 
-    private void saveType(ActionEvent e) {
+    private DataForCompare saveType(ActionEvent e) {
         DataForCompare dType = new DataForCompare();
         dType.setTypeC(e.getActionCommand());
-        System.out.println(dType.typeC);
+        System.out.println(dType.getTypeC());
+        return dType;
     }
 
     private void createFrame() {
@@ -80,5 +83,9 @@ public class FrameOfType extends JFrame {
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
+    }
+
+    public DataForCompare getDfc() {
+        return dfc;
     }
 }

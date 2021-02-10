@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ListOfVouchers {
 
-    List<TravelVoucher> vouchers = List.of(
+    private static List<TravelVoucher> vouchers = List.of(
             new TravelVoucher("Relax","Transfer","All inclusive",10),
             new TravelVoucher("Relax","Self-departure","Only breakfasts",14),
             new TravelVoucher("Relax","Transfer","Only breakfasts",10),

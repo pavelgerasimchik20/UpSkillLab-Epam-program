@@ -1,10 +1,10 @@
 package withClasses.aggregation.Task5.Vouchers;
 
 public class DataForCompare {
-    public String typeC;
-    public String transportC;
-    public String foodC;
-    public Integer amountOfDaysC;
+    private String typeC;
+    private String transportC;
+    private String foodC;
+    private Integer amountOfDaysC;
 
     public String getTypeC() {
         return typeC;
