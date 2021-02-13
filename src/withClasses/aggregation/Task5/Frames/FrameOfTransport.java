@@ -1,13 +1,21 @@
 package withClasses.aggregation.Task5.Frames;
 
+import withClasses.aggregation.Task5.TechSolution.Checker;
 import withClasses.aggregation.Task5.Vouchers.DataForCompare;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class FrameOfTransport extends JFrame {
-    public FrameOfTransport() {
+
+    private DataForCompare dtf;
+    private Checker checker;
+
+    public FrameOfTransport(DataForCompare data, Checker checker) {
         super("                Select transport");
+        this.dtf = data;
+        this.checker = checker;
         createFrame();
         createButtons();
 
@@ -20,7 +28,7 @@ public class FrameOfTransport extends JFrame {
         transferBtn.setFocusPainted(false);
         add(transferBtn);
         transferBtn.addActionListener(actionEvent -> {
-            saveType(transferBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
 
@@ -30,13 +38,14 @@ public class FrameOfTransport extends JFrame {
         selfBtn.setFocusPainted(false);
         add(selfBtn);
         selfBtn.addActionListener(actionEvent -> {
-            saveType(selfBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
     }
 
-    private void saveType(String btnName) {
-        //DataForCompare.transportC = btnName;
+    private void saveType(ActionEvent e) {
+        dtf.setTransportC(e.getActionCommand());
+        checker.check();
     }
 
     private void createFrame() {

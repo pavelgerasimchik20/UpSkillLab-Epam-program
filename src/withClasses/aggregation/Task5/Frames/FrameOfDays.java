@@ -1,14 +1,21 @@
 package withClasses.aggregation.Task5.Frames;
 
+import withClasses.aggregation.Task5.TechSolution.Checker;
 import withClasses.aggregation.Task5.Vouchers.DataForCompare;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class FrameOfDays extends JFrame {
 
-    public FrameOfDays() {
+    private DataForCompare dtf;
+    private Checker checker;
+
+    public FrameOfDays(DataForCompare data, Checker checker) {
         super("                Select amount of days");
+        dtf = data;
+        this.checker = checker;
         createFrame();
         createButtons();
 
@@ -21,7 +28,7 @@ public class FrameOfDays extends JFrame {
         oneBtn.setFocusPainted(false);
         add(oneBtn);
         oneBtn.addActionListener(actionEvent -> {
-            saveType(oneBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
 
@@ -31,7 +38,7 @@ public class FrameOfDays extends JFrame {
         fiveBtn.setFocusPainted(false);
         add(fiveBtn);
         fiveBtn.addActionListener(actionEvent -> {
-            saveType(fiveBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
 
@@ -41,7 +48,7 @@ public class FrameOfDays extends JFrame {
         sevenBtn.setBounds(50, 110, 280, 30);
         add(sevenBtn);
         sevenBtn.addActionListener(actionEvent -> {
-            saveType(sevenBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
 
@@ -51,7 +58,7 @@ public class FrameOfDays extends JFrame {
         tenBtn.setBounds(50, 155, 280, 30);
         add(tenBtn);
         tenBtn.addActionListener(actionEvent -> {
-            saveType(tenBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
 
@@ -61,13 +68,14 @@ public class FrameOfDays extends JFrame {
         fourteenBtn.setFocusPainted(false);
         add(fourteenBtn);
         fourteenBtn.addActionListener(actionEvent -> {
-            saveType(fourteenBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
     }
 
-    private void saveType(String btnName) {
-        //DataForCompare.amountOfDaysC = Integer.parseInt(btnName);
+    private void saveType(ActionEvent e) {
+        dtf.setAmountOfDaysC(Integer.parseInt(e.getActionCommand()));
+        checker.check();
     }
 
     private void createFrame() {

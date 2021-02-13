@@ -1,13 +1,21 @@
 package withClasses.aggregation.Task5.Frames;
 
+import withClasses.aggregation.Task5.TechSolution.Checker;
 import withClasses.aggregation.Task5.Vouchers.DataForCompare;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class FrameOfFood extends JFrame {
-    public FrameOfFood() {
+
+    private DataForCompare dtf;
+    private Checker checker;
+
+    public FrameOfFood(DataForCompare data, Checker checker) {
         super("                Select food");
+        this.checker=checker;
+        this.dtf = data;
         createFrame();
         createButtons();
 
@@ -20,7 +28,7 @@ public class FrameOfFood extends JFrame {
         AIBtn.setFocusPainted(false);
         add(AIBtn);
         AIBtn.addActionListener(actionEvent -> {
-            saveType(AIBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
 
@@ -30,7 +38,7 @@ public class FrameOfFood extends JFrame {
         breakfastBtn.setFocusPainted(false);
         add(breakfastBtn);
         breakfastBtn.addActionListener(actionEvent -> {
-            saveType(breakfastBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
 
@@ -40,7 +48,7 @@ public class FrameOfFood extends JFrame {
         lunchBtn.setBounds(50, 110, 280, 30);
         add(lunchBtn);
         lunchBtn.addActionListener(actionEvent -> {
-            saveType(lunchBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
 
@@ -50,7 +58,7 @@ public class FrameOfFood extends JFrame {
         breakLunchBtn.setBounds(50, 155, 280, 30);
         add(breakLunchBtn);
         breakLunchBtn.addActionListener(actionEvent -> {
-            saveType(breakLunchBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
 
@@ -60,13 +68,14 @@ public class FrameOfFood extends JFrame {
         withoutMealsBtn.setFocusPainted(false);
         add(withoutMealsBtn);
         withoutMealsBtn.addActionListener(actionEvent -> {
-            saveType(withoutMealsBtn.getName());
+            saveType(actionEvent);
             dispose();
         });
     }
 
-    private void saveType(String btnName) {
-        //DataForCompare.foodC = btnName;
+    private void saveType(ActionEvent e) {
+        dtf.setFoodC(e.getActionCommand());
+        checker.check();
     }
 
     private void createFrame() {

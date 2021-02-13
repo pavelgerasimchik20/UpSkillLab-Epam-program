@@ -1,5 +1,6 @@
 package withClasses.aggregation.Task5.Frames;
 
+import withClasses.aggregation.Task5.TechSolution.Checker;
 import withClasses.aggregation.Task5.Vouchers.DataForCompare;
 
 import javax.swing.*;
@@ -8,13 +9,15 @@ import java.awt.event.ActionEvent;
 
 public class FrameOfType extends JFrame {
 
-    DataForCompare dfc;
+    private DataForCompare dtf;
+    private Checker checker;
 
-    public FrameOfType() {
+    public FrameOfType(DataForCompare d, Checker checker) {
         super("                Select type of tour");
+        this.dtf = d;
+        this.checker = checker;
         createFrame();
         createButtons();
-
     }
 
     public void createButtons() {
@@ -24,7 +27,7 @@ public class FrameOfType extends JFrame {
         relaxationBtn.setFocusPainted(false);
         add(relaxationBtn);
         relaxationBtn.addActionListener(actionEvent -> {
-            dfc = saveType(actionEvent);
+            saveType(actionEvent);
             dispose();
         });
 
@@ -34,7 +37,7 @@ public class FrameOfType extends JFrame {
         excursionBtn.setFocusPainted(false);
         add(excursionBtn);
         excursionBtn.addActionListener(actionEvent -> {
-            dfc = saveType(actionEvent);
+            saveType(actionEvent);
             dispose();
         });
 
@@ -44,7 +47,7 @@ public class FrameOfType extends JFrame {
         healthBtn.setBounds(50, 110, 280, 30);
         add(healthBtn);
         healthBtn.addActionListener(actionEvent -> {
-            dfc = saveType(actionEvent);
+            saveType(actionEvent);
             dispose();
         });
 
@@ -54,7 +57,7 @@ public class FrameOfType extends JFrame {
         shopBtn.setBounds(50, 155, 280, 30);
         add(shopBtn);
         shopBtn.addActionListener(actionEvent -> {
-            dfc = saveType(actionEvent);
+            saveType(actionEvent);
             dispose();
         });
 
@@ -64,16 +67,14 @@ public class FrameOfType extends JFrame {
         cruiseBtn.setFocusPainted(false);
         add(cruiseBtn);
         cruiseBtn.addActionListener(actionEvent -> {
-            dfc = saveType(actionEvent);
+            saveType(actionEvent);
             dispose();
         });
     }
 
-    private DataForCompare saveType(ActionEvent e) {
-        DataForCompare dType = new DataForCompare();
-        dType.setTypeC(e.getActionCommand());
-        System.out.println(dType.getTypeC());
-        return dType;
+    private void saveType(ActionEvent e) {
+        dtf.setTypeC(e.getActionCommand());
+        checker.check();
     }
 
     private void createFrame() {
@@ -83,9 +84,5 @@ public class FrameOfType extends JFrame {
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
-    }
-
-    public DataForCompare getDfc() {
-        return dfc;
     }
 }

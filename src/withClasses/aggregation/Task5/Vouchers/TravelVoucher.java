@@ -13,6 +13,16 @@ public class TravelVoucher {
         this.amountOfDays = amountOfDays;
     }
 
+    @Override
+    public String toString() {
+        return "TravelVoucher{" +
+                "type='" + type + '\'' +
+                ", transport='" + transport + '\'' +
+                ", food='" + food + '\'' +
+                ", amountOfDays=" + amountOfDays +
+                '}';
+    }
+
     public String getType() {
         return type;
     }
