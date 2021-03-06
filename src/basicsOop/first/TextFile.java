@@ -8,6 +8,11 @@ public class TextFile extends File {
         super(name);
     }
 
+    public TextFile(String name, String text) {
+        super(name);
+        this.text = text;
+    }
+
     public void addText(String newtext) {
         text += newtext;
     }

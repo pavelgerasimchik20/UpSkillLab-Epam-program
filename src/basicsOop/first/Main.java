@@ -11,5 +11,7 @@ public class Main {
         myText.renameFile("BHBSDBFDSBJJQKWF");
         myText.print();
         newText.print();
+        newText.renameFile("Old text");
+        newText.print();
     }
 }
