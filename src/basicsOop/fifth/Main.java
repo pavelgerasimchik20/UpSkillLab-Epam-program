@@ -17,7 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        createComposition("rose and orchid and tulip");
+        createComposition("rose and orchid ");
 
         Wrapping wrapping = wrap(flowers);
         wrapping.display();

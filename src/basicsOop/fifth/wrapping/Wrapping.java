@@ -2,6 +2,7 @@ package basicsOop.fifth.wrapping;
 
 import basicsOop.fifth.flowers.Flowers;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -29,8 +30,8 @@ public abstract class Wrapping {
 
             cost += sw.getCost();
         }
-        System.out.println("Composition`s cost: " + cost +
-                " plus  " + getTypeOfWrap() + " wrap: " + getCost() + " = " + (cost + getCost()));
+        JOptionPane.showMessageDialog(null,("Flowers: " + cost +
+                " + " + getTypeOfWrap() + ": " + getCost() + " = " + (cost + getCost())),"COMPOSITION`s COsT",JOptionPane.INFORMATION_MESSAGE);
     }
 
     @Override
