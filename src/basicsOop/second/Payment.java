@@ -5,35 +5,38 @@ import java.util.Arrays;
 
 public class Payment {
 
-    private String customersName;
-    private Basket basket;
+    private final ShoppingCart shoppingCart;
+    private final String customersName;
 
     public Payment(String customersName, String... goods) {
         this.customersName = customersName;
-        basket = new Basket(goods);
+        shoppingCart = new ShoppingCart(goods);
     }
 
-    public void show(){
+    public void print() {
         JOptionPane.showMessageDialog(null,
-                basket,
-                "Receipt",
+                shoppingCart,
+                "Customer: " + customersName,
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
-    class Basket {
+    static class ShoppingCart {
 
-        private int amountOfGoods;
-        private String[] goods;
+        private final String[] goods;
+        private final int amountOfGoods;
+        private final double totalCost;
 
-        public Basket(String... goods) {
+        public ShoppingCart(String... goods) {
             this.goods = goods;
             amountOfGoods = goods.length;
+            totalCost = Math.random()*100;
         }
 
         @Override
         public String toString() {
-            String txt = "Goods: " + Arrays.toString(goods) + "\n";
-            txt += "Amount of goods: " + amountOfGoods;
+            String txt = "Goods: " + Arrays.toString(goods) + "\n" ;
+            txt += "Amount of goods: " + amountOfGoods + "\n" ;
+            txt += "Total cost: " + totalCost;
             return txt;
         }
     }

@@ -2,7 +2,16 @@ package basicsOop.first;
 
 public class TextFile extends File {
 
-    private String text = "";
+    private String text = "" ;
+
+    public TextFile(String name, Directory directory) {
+        super(name, directory);
+    }
+
+    public TextFile(String name, Directory directory, String text) {
+        super(name, directory);
+        this.text = text;
+    }
 
     public TextFile(String name) {
         super(name);
@@ -32,7 +41,7 @@ public class TextFile extends File {
     }
 
     public void remove() {
-        this.text = "";
+        this.text = "" ;
     }
 
 }
