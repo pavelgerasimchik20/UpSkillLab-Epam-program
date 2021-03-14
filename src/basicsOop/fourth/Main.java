@@ -7,8 +7,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Cave dragonsCave = new Cave();
-        int value = 0;
+        int value;
         try {
             Scanner scanner = new Scanner(System.in);
             do {
@@ -21,7 +22,7 @@ public class Main {
                 value = scanner.nextInt();
                 switch (value) {
                     case (1):
-                        dragonsCave.show();
+                        dragonsCave.showListOfTreasure();
                         break;
                     case (2):
                         dragonsCave.findExpensive();

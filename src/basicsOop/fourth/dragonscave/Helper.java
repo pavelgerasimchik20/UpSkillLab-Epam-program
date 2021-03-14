@@ -2,7 +2,9 @@ package basicsOop.fourth.dragonscave;
 
 public interface Helper {
 
-    void show();
+    void showListOfTreasure();
+
     void findExpensive();
+
     void selectTreasure(double value);
 }

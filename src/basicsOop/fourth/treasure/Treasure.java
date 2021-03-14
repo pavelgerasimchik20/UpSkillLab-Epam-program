@@ -1,22 +1,21 @@
 package basicsOop.fourth.treasure;
 
-public class Treasure{
+public class Treasure {
 
     private final Material material;
-    private final int cost;
+    private final double cost;
 
-    public Treasure(Material material, int cost) {
+    public Treasure(Material material, double cost) {
         this.material = material;
         this.cost = cost;
     }
 
     @Override
     public String toString() {
-        return "material= " + material +
-                "  cost= " + cost + " $";
+        return String.format("Material-> %s, cost= %.2f $", material, cost);
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 }
