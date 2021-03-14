@@ -6,6 +6,7 @@ public class Bank {
 
     private String name;
     private List<Client> clients = new ArrayList<>();
+    private Client client;
 
     public Bank(String name) {
         this.name = name;
@@ -15,17 +16,15 @@ public class Bank {
         this.clients = clients;
     }
 
-    public void findAccounts() {
+    public void findAccounts(Client nameOfClient) {
         List<Client> client = this.clients;
-        System.out.println("Введите имя клиента:_____");
-        Scanner scanner = new Scanner(System.in);
-        String nameOfClient = scanner.nextLine();
-        System.out.println("Выполнен поиск для " + nameOfClient+"a");
+        System.out.println("Выполнен поиск для " + nameOfClient.getName()+"a");
         for (Client cl :
                 client) {
-            if (nameOfClient.equalsIgnoreCase(cl.getName())) {
+            if (nameOfClient.getName().equalsIgnoreCase(cl.getName())) {
                 System.out.println(cl);
             }
         }
+        System.out.println();
     }
 }

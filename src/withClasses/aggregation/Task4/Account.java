@@ -1,9 +1,6 @@
 package withClasses.aggregation.Task4;
 
-import java.io.Serializable;
-import java.util.Comparator;
-
-public class Account implements Serializable {
+public class Account {
 
     private String number;
     private int balance;

@@ -30,13 +30,10 @@ public class Main {
                 new Account("2", 7800)
         ));
 
-        alfaBank.findAccounts();
-        sidorov.sortAccounts();
-
+        alfaBank.findAccounts(petrov);
+        petrov.sortAccounts();
         petrov.sumOfAccounts();
         petrov.sum();
-        ivanov.sumOfAccounts();
-        ivanov.sum();
     }
 
 
