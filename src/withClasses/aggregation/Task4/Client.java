@@ -1,15 +1,15 @@
 package withClasses.aggregation.Task4;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import com.sun.source.tree.Tree;
+
+import java.util.*;
 
 public class Client {
 
-    private List<Account> accounts = new ArrayList<>();
+    private TreeSet<Account> accounts;
     private String name;
 
-    public List<Account> getAccounts() {
+    public TreeSet<Account> getAccounts() {
         return accounts;
     }
 
@@ -37,7 +37,7 @@ public class Client {
         System.out.println("Отрицательная сумма по всем счетам " + getName() + "a = " + resultLess + " $");
     }
 
-    public void setAccounts(List<Account> accounts) {
+    public void setAccounts(TreeSet<Account> accounts) {
         this.accounts = accounts;
     }
 
@@ -57,14 +57,4 @@ public class Client {
     public String toString() {
         return accounts.toString();
     }
-
-    public void sortAccounts() {
-        try {
-            List<Account> list = this.getAccounts();
-            list.sort(Comparator.comparing(Account::getBalance));
-        } catch (Exception e) {
-            e.getMessage();
-        }
-    }
-
 }

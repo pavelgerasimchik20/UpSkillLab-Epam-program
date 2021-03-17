@@ -46,7 +46,7 @@ public class Task1 {
         System.out.println(test.findMore());
         System.out.println(test.sum());
         test.show();
-        System.out.println(test.getB()); // НЕ внимательно прочитал условие Сеттеры забыл ((
+        System.out.println(test.getB());
     }
 }
 

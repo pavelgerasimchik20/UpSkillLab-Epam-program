@@ -1,7 +1,8 @@
 package withClasses.simplestClasses;
 
 public class Task3 {
-    static boolean flazhok;
+    
+    static boolean excellentStudent;
 
     public static void main(String[] args) {
         Student[] list = studentsInflate();
@@ -12,12 +13,12 @@ public class Task3 {
         for (int i = 0; i < list.length; i++) {
             for (int j = 0; j < list[i].progress.length; j++) {
                 if (list[i].progress[j] < 9) {
-                    flazhok =false;
+                    excellentStudent =false;
                 } else {
-                    flazhok= true;
+                    excellentStudent = true;
                 }
             }
-            if(flazhok){
+            if(excellentStudent){
                 System.out.println("фамилия: " + list[i].getFullName() + " группа №: " + list[i].getGroupNumber());
             }
         }

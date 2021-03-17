@@ -4,27 +4,18 @@ import java.util.*;
 
 public class Bank {
 
-    private String name;
     private List<Client> clients = new ArrayList<>();
     private Client client;
 
-    public Bank(String name) {
-        this.name = name;
+    public List<Client> getClients() {
+        return clients;
     }
 
-    public void setClients(List<Client> clients) {
-        this.clients = clients;
+    public Bank(String name) {
     }
 
     public void findAccounts(Client nameOfClient) {
-        List<Client> client = this.clients;
-        System.out.println("Выполнен поиск для " + nameOfClient.getName()+"a");
-        for (Client cl :
-                client) {
-            if (nameOfClient.getName().equalsIgnoreCase(cl.getName())) {
-                System.out.println(cl);
-            }
-        }
-        System.out.println();
+        TreeSet<Account> sorted = nameOfClient.getAccounts();
+        System.out.println(sorted);
     }
 }

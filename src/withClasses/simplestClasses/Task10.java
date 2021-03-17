@@ -109,16 +109,13 @@ public class Task10 {
     }
 }
 class Airline{
-    private String destination;
-    private int number;
-    private String typeOfPlane; // long-haul
-    private StartTime time;
-    private String dayOfWeek;
+    private final String destination;
+    private final StartTime time;
+    private final String dayOfWeek;
 
     public Airline(String destination, int number, String typeOfPlane, StartTime time, String dayOfWeek) {
         this.destination = destination;
-        this.number = number;
-        this.typeOfPlane = typeOfPlane;
+        // long-haul
         this.time = time;
         this.dayOfWeek = dayOfWeek;
     }
@@ -141,16 +138,12 @@ class Airline{
     }
 }
 class StartTime {
-    private int hours;
-    private int minutes;
+    private final int hours;
+    private final int minutes;
 
     public StartTime(int hours, int minutes) {
         this.hours = hours;
         this.minutes = minutes;
-    }
-
-    public StartTime(int hours) {
-        this.hours = hours;
     }
 
     public int getMinutes() {

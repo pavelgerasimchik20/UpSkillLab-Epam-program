@@ -46,22 +46,14 @@ public class Task8 {
 
 class Customer implements Comparator<Customer> {
 
-    private int id;
-    private String firstName;
-    private String secondName;
-    private String patronymic;
-    private String address;
-    private int creditCardNumber;
-    private int bankAccountNumber;
+    private final String firstName;
+    private final String secondName;
+    private final int creditCardNumber;
 
     public Customer(int id, String firstName, String secondName, String patronymic, String address, int creditCardNumber, int bankAccountNumber) {
-        this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
-        this.patronymic = patronymic;
-        this.address = address;
         this.creditCardNumber = creditCardNumber;
-        this.bankAccountNumber = bankAccountNumber;
     }
 
     public String getFirstName() {

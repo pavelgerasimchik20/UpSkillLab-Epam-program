@@ -1,9 +1,9 @@
 package withClasses.aggregation.Task4;
 
-public class Account {
+public class Account implements Comparable<Account>{
 
     private String number;
-    private int balance;
+    private final int balance;
     private boolean active;
 
     public String getNumber() {
@@ -16,10 +16,6 @@ public class Account {
 
     public void setNumber(String number) {
         this.number = number;
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
     }
 
     public Account(String number, int balance) {
@@ -43,5 +39,10 @@ public class Account {
 
     public void unblock() {
         this.active = true;
+    }
+
+    @Override
+    public int compareTo(Account account) {
+        return this.getBalance()- account.getBalance();
     }
 }
