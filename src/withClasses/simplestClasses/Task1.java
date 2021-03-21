@@ -32,7 +32,7 @@ class Test1 {
         return result;
     }
 
-    public int findMore() {
+    public int findMax() {
         int result = Math.max(this.a, this.b);
         return result;
     }
@@ -41,9 +41,9 @@ class Test1 {
 public class Task1 {
     public static void main(String[] args) {
         Test1 test = new Test1();
-        System.out.println(test.findMore());
+        System.out.println(test.findMax());
         test.setA(10);
-        System.out.println(test.findMore());
+        System.out.println(test.findMax());
         System.out.println(test.sum());
         test.show();
         System.out.println(test.getB());
